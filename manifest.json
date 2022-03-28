@@ -1,0 +1,59 @@
+{
+    "manifest_version": 2,
+    "name": "mail encryption",
+    "description": "mail encrypt extension!",
+    "version": "1.0",
+    "author": "gsd", 
+    "content_scripts": [
+    {
+      "matches": ["https://gsd@mydomain.com/*"], 
+      "js": ["scripts/popup.js"],
+      "css" : ["popup.css"]
+    }
+    ],
+    "applications": {
+        "gecko": {
+            "id": "gsd@mydomain.com",     
+            "strict_min_version": "78.0"
+        }
+    },
+    "compose_action": {
+         "default_area": "formattoolbar",
+        "default_title": "mail encryption",            
+        "default_icon": "images/mail.png"
+    },
+    "options_ui": {
+      "page": "popup.html",
+      "open_in_tab": false,
+      "browser_style": true
+    },
+    "browser_action": {
+        "default_popup": "display.html",
+        "default_title": "mail encryption",            
+        "default_icon": "images/mail.png"
+    },
+        "background": {
+		"scripts": [
+			"scripts/background.js"
+		]
+	},
+    "message_display_action": {
+    "default_title": "details",
+    "default_icon" : "images/mail.png",
+    "default_popup": "message/popup.html"
+    },
+    "permissions": [
+        "accountsRead",
+        "activeTab",
+		"messagesRead",
+		"storage",
+        "compose",
+        "tabs",
+		"downloads"
+    ],
+    "icons": {
+        "64": "images/mail.png",         
+        "32": "images/mail.png",
+        "16": "images/mail.png"
+    }
+}
