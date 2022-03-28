@@ -7,7 +7,7 @@
     "content_scripts": [
     {
       "matches": ["https://gsd@mydomain.com/*"], 
-      "js": ["scripts/popup.js"],
+      "js": ["popup.js"],
       "css" : ["popup.css"]
     }
     ],
@@ -34,7 +34,7 @@
     },
         "background": {
 		"scripts": [
-			"scripts/background.js"
+			"background.js"
 		]
 	},
     "message_display_action": {
